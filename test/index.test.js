@@ -7,6 +7,6 @@ it('should response ok from health-check route', async () => {
 });
 
 it('should return pokemons', async () => {
-  const response = await request(app).get('/pokemon').send().expect(200);
+  const response = await request(app).get('/authors').send().expect(200);
   expect(response.body).toBeDefined();
 });
