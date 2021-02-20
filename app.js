@@ -21,8 +21,13 @@ app.get('/v1/authors', async (req, res) => {
   return res.send(authors);
 });
 
+app.get('/v1/authors/:id', async (req, res) => {
+  const { id } = req.params;
+  const author = await Author.find({ id });
+  return res.send(author);
+});
+
 app.post('/v1/authors', async (req, res) => {
-  console.log(req.body);
   const author = new Author(req.body);
 
   try {
